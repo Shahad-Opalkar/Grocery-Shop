@@ -1,0 +1,201 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing:  border-box;
+    font-family:'Roboto', sans-serif;
+}
+a {
+    text-decoration: none; /* This removes the underline */
+  }
+button
+{
+cursor:pointer;
+}
+
+.Center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30;
+  }
+
+.container1 {
+  position: relative;
+  text-align: center;
+  color: white;
+margin:auto;
+padding-top:10px;
+transition:0.5s;
+
+}
+
+.top-left {
+  position: absolute;
+  top: 40px;
+  left: 16px;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 450px;
+}
+.left1
+{
+position: absolute;
+bottom:8px;
+left:550px;
+}
+.left2
+{
+position: absolute;
+bottom:8px;
+left:710px;
+}
+.left3
+{
+position: absolute;
+bottom:8px;
+left:850px;
+
+}
+.left4
+{
+position: absolute;
+bottom:8px;
+left:960px;
+
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+
+}
+img
+{
+border-radius:10px;
+}
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+   
+  }
+  
+.BUTTON{
+    BACKGROUND-COLOR : GOld;
+    BORDER-RADIUS:4PX;
+    BORDER:1px solid black;
+    font-family: "Times New Roman", Times, serif;
+    }
+    
+    .button:active {
+      background-color: springgreen;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+    
+    .container
+    {
+    position:relative;
+    width:100%
+    }
+    
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .9s ease;
+      background-color: White;
+    }
+    
+    .container:hover .overlay {
+      opacity: 0.9;
+    }
+    .text {
+      color: black;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+    
+    /*----------- CARTPAGE---------------------*/
+
+    .products-container
+    {
+      max-width:  650px;
+      justify-content : space-around;
+      margin:0 auto;
+      margin-top : 50px;
+      display:flex;
+      flex-wrap: wrap;
+      padding-bottom: 100px;
+
+  }
+  .product-header
+  {
+    width:100%;
+    max-width: 650 px;
+    display: flex;
+    justify-content: flex start;
+    border-bottom: 4px solid lightgray;
+    margin : 0 auto;
+
+  }
+
+  .product-title
+  {
+    width:45%;
+  }
+  .price {
+    width: 15%;
+    border-bottom: 1px solid lightgray;
+    display : flex;
+    align-items : center;
+  }
+  .quantity
+  {
+    width:30%;
+    border-bottom: 1px solid lightgray;
+    display:flex;
+    align-items : center;
+    }
+
+  .total
+  {
+    width:10%;
+    border-bottom: 1px solid lightgray;
+    display:flex;
+    align-items : center;
+    }
+  .product
+  {
+    width:45%;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+   }
+  .products-conatiner ion-icon
+  {
+    font-size:25px;
+    background-color:red;
+    margin-left:10px;
+    margin-right:10px;
+    cursor:pointer;
+    size:50px;
+  }
+
+  
