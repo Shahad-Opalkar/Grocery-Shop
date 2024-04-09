@@ -1,0 +1,146 @@
+body
+{
+font-family: Poppins;
+}
+
+svg
+{
+width:30px;
+}
+
+button
+{
+cursor:pointer;
+}
+
+
+
+.icon-cart span
+{
+background-color:red;
+position:absolute;
+border-radius:50%;
+justify-content: center;
+right:-20px;
+height:30px;
+width:30px;
+color:white;
+align-items:center;
+display:flex;
+top:50%;
+}
+
+.cartTab
+{
+background-color:floralwhite;
+width:400px;
+position:fixed;
+top:0;
+right:0;
+bottom:0;
+display: grid;
+grid-template-rows: 70px 1 fr 70px;
+}
+
+.cartTab h1
+{
+padding:20px;
+margin:0;
+font-weight:300;
+}
+
+.cartTab .btn
+{
+display : grid;
+grid-template-columns: repeat(2,1fr);
+}
+
+.cartTab .btn button
+{
+background-color:yellow;
+
+font-family:Poppins;
+font-weight:500;
+}
+
+.cartTab .btn button.close
+{
+background-color:white;
+}
+
+.cartTab .listCart
+{
+overflow:auto;
+}
+.cartTab .listCart::-webkit-scrollbar{
+width:0;
+}
+.cartTab
+{
+right:-400px;
+transition:0.5s;
+}
+
+body.activeTabCart .carTab
+{
+right:0;
+}
+body.activeTabCart .container
+{
+transform: translateX(-250px);
+}
+
+.Center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:30;
+  }
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.top-left {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 450px;
+}
+.left1
+{
+position: absolute;
+bottom:8px;
+left:550px;
+}
+.left2
+{
+position: absolute;
+bottom:8px;
+left:710px;
+}
+.left3
+{
+position: absolute;
+bottom:8px;
+left:850px;
+
+}
+.left4
+{
+position: absolute;
+bottom:8px;
+left:960px;
+
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+
+}
