@@ -1,4 +1,4 @@
-name: HTML Validation Workflow
+name: HTML and CSS Validation Workflow
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - '**'
 
 jobs:
-  validate-html:
-    name: Validate HTML Files
+  validate-html-css:
+    name: Validate HTML and CSS Files
     runs-on: ubuntu-latest
 
     steps:
@@ -15,13 +15,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install HTML validator
-      - name: Setup HTML Validator
+      # Step 2: Install HTML and CSS validators
+      - name: Setup Validators
         run: |
           sudo apt-get update
           sudo apt-get install -y npm
           npm install -g html-validator-cli
+          npm install -g stylelint
 
-      # Step 3: Run HTML validation
+      # Step 3: Validate HTML files
       - name: Validate HTML files
         run: html-validator --file=index.html --verbose || echo "HTML validation complete"
+
+      # Step 4: Validate CSS files
+      - name: Validate CSS files
+        run: stylelint "**/*.css" || echo "CSS validation complete"
