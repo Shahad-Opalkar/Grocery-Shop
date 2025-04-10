@@ -1,4 +1,4 @@
-name: HTML and CSS Validation Workflow
+name: Build Hugo Website
 
 on:
   push:
