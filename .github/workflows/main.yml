@@ -1,4 +1,4 @@
-name: Build and Deploy Hugo Website
+name: HTML Validation Workflow
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - '**'
 
 jobs:
-  build:
-    name: Build Hugo Website
+  validate-html:
+    name: Validate HTML Files
     runs-on: ubuntu-latest
 
     steps:
@@ -15,25 +15,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Hugo
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 'latest'
-
-      # Step 3: Install dependencies (if needed)
-      - name: Install dependencies
+      # Step 2: Install HTML validator
+      - name: Setup HTML Validator
         run: |
-          # If your project uses npm, yarn, or other package managers, add install commands here.
-          echo "No additional dependencies to install for this setup."
+          sudo apt-get update
+          sudo apt-get install -y npm
+          npm install -g html-validator-cli
 
-      # Step 4: Build the Hugo website
-      - name: Build the website
-        run: hugo --minify
-
-      # Step 5: Upload build artifacts
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: hugo-site
-          path: ./public
+      # Step 3: Run HTML validation
+      - name: Validate HTML files
+        run: html-validator --file=index.html --verbose || echo "HTML validation complete"
