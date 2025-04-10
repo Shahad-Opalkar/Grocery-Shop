@@ -25,9 +25,9 @@ jobs:
       - name: Build Hugo Site
         run: hugo
 
-      # Step 4: Upload build artifacts (optional)
+      # Step 4: Upload build artifacts
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: hugo-site
           path: ./public
