@@ -31,18 +31,9 @@ jobs:
       - name: Build the website
         run: hugo --minify
 
-      # Step 5: Upload build artifacts (optional)
+      # Step 5: Upload build artifacts
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: hugo-site
           path: ./public
-
-      # Step 6: Deploy (optional)
-      # Uncomment and configure deployment step if needed
-      # Example: Deploy to GitHub Pages
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./public
