@@ -25,9 +25,14 @@ jobs:
       - name: Build Hugo Site
         run: hugo
 
-      # Step 4: Upload build artifacts
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+      # Step 4: Debugging step (optional)
+      - name: List generated files
+        run: ls -R public
+
+      # Step 5: Deploy to GitHub Pages
+      # Replace this step with your desired deployment method if not using GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: hugo-site
-          path: ./public
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
