@@ -1,1 +1,39 @@
+name: Build and Deploy Hugo Website
 
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: Build Hugo Website
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+
+      # Step 3: Install dependencies (if needed)
+      - name: Install dependencies
+        run: |
+          # If your project uses npm, yarn, or other package managers, add install commands here.
+          echo "No additional dependencies to install for this setup."
+
+      # Step 4: Build the Hugo website
+      - name: Build the website
+        run: hugo --minify
+
+      # Step 5: Upload build artifacts
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: hugo-site
+          path: ./public
